@@ -2,6 +2,7 @@ import os
 from distutils.core import setup, Extension
 
 import numpy as np
+from Cython.Build import cythonize
 
 
 opencv_include_dir = "/opt/homebrew/include/opencv4"  # for macos
@@ -9,7 +10,6 @@ compiler_path = "/opt/homebrew/bin/g++-12"  # for macos (GCC or LLVM)
 
 os.environ["CC"] = compiler_path
 os.environ["CXX"] = compiler_path
-
 
 crop_module_cpp = Extension(
     "image_crop_module",
@@ -30,8 +30,16 @@ crop_module_omp = Extension(
     extra_link_args=["-lgomp"],
 )
 
+extract_module_cython = [
+    Extension(
+        "extract_color_cython",
+        ["extract_color_cython.pyx"],
+        include_dirs=[np.get_include()],
+    )
+]
+
 setup(
     name="Optimize CPU modules",
     version="0.1",
-    ext_modules=[crop_module_cpp, crop_module_omp],
+    ext_modules= [crop_module_cpp, crop_module_omp] + cythonize(extract_module_cython),
 )

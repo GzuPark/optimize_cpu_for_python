@@ -23,8 +23,7 @@ PyCharm에서 `line-profiler`를 사용하기 위해서는 plugin에서 별도�
 환경 설정이 됐다면, 아래 명령어로 필요한 모듈을 컴파일 해주세요. 그러면, 현재 경로에 OS와 Python 버전에 맞는 컴파일드된 파일을 확인할 수 있습니다.
 
 ```shell
-python setup_extract_color.py build_ext --inplace
-python setup_crop_image.py build_ext --inplace
+python setup.py build_ext --inplace
 ```
 
 ### 권장 사용 파일
