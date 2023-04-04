@@ -96,7 +96,7 @@ def main():
     st = perf_counter()
     for _ in range(100):
         _ = extract_main_colors_faster(image_path)
-    print(f"Fater runs 100 times: {perf_counter() - st:.3f} second")
+    print(f"Faster runs 100 times: {perf_counter() - st:.3f} second")
 
     st = perf_counter()
     for _ in range(100):

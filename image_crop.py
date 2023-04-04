@@ -62,7 +62,7 @@ def main():
     st = perf_counter()
     for _ in range(100):
         _ = image_crop_cpp(image, bboxes)
-    print(f"C++ wrapeer runs 100 times: {perf_counter() - st:.3f} second")
+    print(f"C++ wrapper runs 100 times: {perf_counter() - st:.3f} second")
 
     st = perf_counter()
     for _ in range(100):

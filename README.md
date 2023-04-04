@@ -49,7 +49,7 @@ Cython runs 100 times: 0.963 second
 ### Optimize Opencv with `image_crop.py`
 ```text
 Python runs 100 times: 3.706 second
-C++ wrapeer runs 100 times: 1.748 second
+C++ wrapper runs 100 times: 1.748 second
 OpenMP runs 100 times: 0.604 second
 ```
 
